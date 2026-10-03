@@ -130,7 +130,15 @@ input/user.csv       # SparkSQL 读取 CSV
 
 小表直接用变量参与 join 时，每个 Task 都要复制一份，网络和内存开销大。用 `sc.broadcast()` 广播后，**每个 Executor 只存一份**，Task 共享读取。
 
-详细内容见 [docs](docs) 目录。
+## 文档目录
+
+| 文档 | 内容 |
+|:---|:---|
+| [docs/01-spark-core.md](docs/01-spark-core.md) | RDD 核心概念、算子分类（标注是否 shuffle）、持久化、宽窄依赖、累加器与广播变量、自定义分区器、序列化 |
+| [docs/02-spark-sql.md](docs/02-spark-sql.md) | DataFrame/Dataset 区别、三种编程方式、UDF/UDAF/UDTF 对比与实现、数据源读写、Hive 集成 |
+| [docs/03-spark-tuning.md](docs/03-spark-tuning.md) | 资源与内存模型、序列化、并行度、Shuffle 与 AQE、**数据倾斜处理**、GC 调优、常见报错排查、调参速查表 |
+
+其中 `03-spark-tuning.md` 里的**数据倾斜**部分整理了四种解决方案（过滤无效 key / 加盐打散 / broadcast join / 单独处理）及各自适用场景，是面试高频考点。
 
 ## License
 
