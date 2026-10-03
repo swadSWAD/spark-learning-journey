@@ -1,0 +1,47 @@
+# ===== Maven =====
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+release.properties
+
+# ===== Spark 运行时产物 =====
+# checkpoint 目录会产生大量小文件，绝不能提交
+cp/
+checkpoint/
+*.checkpoint
+*.crc
+
+# Spark 输出目录
+output/
+output-*/
+spark-warehouse/
+metastore_db/
+derby.log
+
+# ===== IDE =====
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.settings/
+.classpath
+.project
+
+# ===== 编译产物 =====
+*.class
+*.jar
+*.war
+
+# ===== 日志 =====
+logs/
+*.log
+
+# ===== 系统 =====
+.DS_Store
+Thumbs.db
+
+# ===== 敏感信息 =====
+*.local.conf
+env.local
